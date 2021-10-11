@@ -23,18 +23,19 @@ public class Main {
     }
 
     public static void flipNHeads(int n){
-        int counter=0;
-        int numberOfFlip=0;
-        while (counter < n){
-            if (Math.random() < .5){
+        int count = 0;
+        int totalCout = 0;
+        while (count < n){
+            if(Math.random() * 1 < 0.5 ){
+                count = 0;
                 System.out.println("tails");
             }else {
-                counter++;
-                System.out.println("heads");
+                count++;
+                System.out.println("heads") ;
             }
-            numberOfFlip++;
+            totalCout++;
         }
-        System.out.println("It took " + numberOfFlip + " flips to flip " + n+ " head in a row.");
+        System.out.println("It took " + totalCout + " flips to flip " + n+ " head in a row.");
     }
 
     public static void clock(){
