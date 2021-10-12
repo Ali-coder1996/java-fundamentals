@@ -17,7 +17,7 @@ class LibraryTest {
         //test the length of array depend in the number of roll is pass
         int[]output=Library.roll(4);
         assertEquals(4,output.length);
-        assertEquals(true,Library.isBteween(output));
+        assertEquals(true,Library.isBetween(output));
 
         //test the duplicate number in the array
         int[] containDuplicate= {1,2,3,4,5};
