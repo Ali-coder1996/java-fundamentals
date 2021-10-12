@@ -4,6 +4,10 @@
 package basiclibrary;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -18,6 +22,8 @@ class LibraryTest {
         int[]output=Library.roll(4);
         assertEquals(4,output.length);
         assertEquals(true,Library.isBetween(output));
+    }
+    @Test public void duplicate(){
 
         //test the duplicate number in the array
         int[] containDuplicate= {1,2,3,4,5};
@@ -26,18 +32,51 @@ class LibraryTest {
         assertEquals(false,Library.containsDuplicates(containDuplicate));
         assertEquals(true,Library.containsDuplicates(withoutContainDuplicate2));
         assertEquals(false,Library.containsDuplicates(emptyArray));
+    }
+    @Test public void average(){
 
         //test the average of the array
         int[] calculateAverageOfArray={10,20,50};
         int[] emptyArrayOfAverage={};
         assertEquals(26,(int)Library.calculateAverage(calculateAverageOfArray));
         assertEquals(0,(int) Library.calculateAverage(emptyArrayOfAverage));
+    }
+    @Test public void minimumAverageOfArray(){
 
         //test the minimum average
         int[][] arrOfArray = {{1,2,3},{1,0,1},{10,1,2}};
         int[][] ArrayOfArray1 = {{1,2,3},{4,5,6},{1,1,2}};
         assertEquals(arrOfArray[1],Library.lowestArray(arrOfArray));
         assertEquals(ArrayOfArray1[2],Library.lowestArray(ArrayOfArray1));
+    }
+    @Test public void analysisWeather(){
+
+        //test the unavailable number between the max and min number in the array
+        int[][] arrOfArray = {{1,2,3},{1,0,1},{10,1,2}};
+        ArrayList<Integer> weather = Library.analyzingWeatherData(arrOfArray);
+          assertEquals(4,weather.get(0));
+          assertEquals(5,weather.get(1));
+          assertEquals(6,weather.get(2));
+    }
+    @Test public void maximumVote(){
+
+        //test the maximum vote in arraylist
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        //if it empties
+        List<String> empty = new ArrayList<>();
+        assertEquals("Bush",Library.tally(votes));
+        assertNull(null,Library.tally(empty));
+
     }
 
 }
