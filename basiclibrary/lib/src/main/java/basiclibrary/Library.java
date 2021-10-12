@@ -15,14 +15,14 @@ public class Library {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         int[] lowestAverageArray =lowestArray(weeklyMonthTemperatures);
-        int[] rolled= roll(4);
+        int[] rolled= roll(8);
         int[] duplicate={1,2,3,4,5};
         int[] avg ={20,4,3,5,10};
         System.out.println(Arrays.toString(rolled));
         System.out.println(containsDuplicates(duplicate));
         System.out.println(calculateAverage(avg));
         System.out.println(Arrays.toString(lowestAverageArray));
-        System.out.println(isBteween(rolled));
+        System.out.println(isBetween(rolled));
     }
 
     public static int[] roll(int num){
@@ -33,8 +33,13 @@ public class Library {
         }
         return dice;
     }
-    public static boolean isBteween(int[] n){
-        return (n.length <= 6 && n.length > 0);
+    public static boolean isBetween(int[] n){
+        for (int i = 0; i < n.length; i++) {
+              if (n[i] < 7 && n[i] > 0){
+                  return true;
+              }
+        }
+        return false;
     }
 
     public static boolean containsDuplicates(int[] num){
