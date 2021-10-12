@@ -9,20 +9,33 @@ public class Library {
     }
     public static void main(String[] args) {
         int[][] weeklyMonthTemperatures = {
-                {66, 64, 58, 65, 71, 57, 600},
+                {66, 64, 58, 65, 71, 57, 60},
                 {57, 65, 65, 70, 72, 65, 51},
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
         int[] lowestAverageArray =lowestArray(weeklyMonthTemperatures);
-        int[] rolled= roll(8);
         int[] duplicate={1,2,3,4,5};
         int[] avg ={20,4,3,5,10};
-        System.out.println(Arrays.toString(rolled));
+        System.out.println(Arrays.toString(roll(8)));
         System.out.println(containsDuplicates(duplicate));
         System.out.println(calculateAverage(avg));
         System.out.println(Arrays.toString(lowestAverageArray));
-        System.out.println(isBetween(rolled));
+        System.out.println(isBetween(duplicate));
+        analyzingWeatherData(weeklyMonthTemperatures);
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
     }
 
     public static int[] roll(int num){
@@ -35,11 +48,11 @@ public class Library {
     }
     public static boolean isBetween(int[] n){
         for (int i = 0; i < n.length; i++) {
-              if (n[i] < 7 && n[i] > 0){
-                  return true;
+              if (!(n[i] < 7 && n[i] > 0)){
+                  return false;
               }
         }
-        return false;
+        return true;
     }
 
     public static boolean containsDuplicates(int[] num){
@@ -77,8 +90,41 @@ public class Library {
             }
         }
         return array[indexNumber];
-
     }
+    public static ArrayList<Integer> analyzingWeatherData(int[][] wetherData) {
+        ArrayList<Integer> temNotSeen = new ArrayList<>();
+        Set<Integer> hashSet = new HashSet<Integer>();
 
+        for (int i = 0; i < wetherData.length; i++) {
+            for (int j = 0; j < wetherData[i].length; j++) {
+                hashSet.add(wetherData[i][j]);
+            }
+        }
+        //find the max and the min temperature
+        int maxTemp = Collections.max(hashSet);
+        int minTemp = Collections.min(hashSet);
+        System.out.println("High: " + maxTemp);
+        System.out.println("Low: " + minTemp);
+
+        // find the temperatures that not seen
+        for (int temp = minTemp; temp < maxTemp; temp++) {
+            if (!hashSet.contains(temp)) {
+                temNotSeen.add(temp);
+                System.out.println("Never saw temperature: " + temp);
+            }
+        }
+        return temNotSeen;
+    }
+    public static String tally(List<String> votes) {
+        String winner = null;
+        int numberOfWinnerVotes = 0;
+        for (String person : votes) {
+            if (Collections.frequency(votes, person) > numberOfWinnerVotes) {
+                winner = person;
+                numberOfWinnerVotes = Collections.frequency(votes, person);
+            }
+        }
+        return winner;
+    }
 
 }
