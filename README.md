@@ -26,8 +26,13 @@ I spent 5 hours in this lab
 
 ## Class 6
 
-| The files  | The Methods | 
-|------------|-------------|
-| library.java  | Inheritance and Interfaces|
+### Overview Of The Architecture
 
-I spent 3 hours in this lab
+├── main ├── Inheritance├── Restaurant.java
+                        ├── Review.java
+
+├── test ├── Inheritance |── RestaurantTest.java                   
+                         └── ReviewTest.java     
+
+
+### You can run the test by: ./gradlew test 
