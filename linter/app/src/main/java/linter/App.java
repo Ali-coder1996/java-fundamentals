@@ -27,8 +27,7 @@ public class App {
         int numOfLines = 1;
 
         try {
-            Scanner gatesFile = null;
-            gatesFile = new Scanner(new File(path));
+            Scanner gatesFile = new Scanner(new File(path));
             while (gatesFile.hasNextLine()) {
                 gatesFileLines.put(numOfLines, gatesFile.nextLine());
                 numOfLines++;
