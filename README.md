@@ -35,4 +35,21 @@ I spent 5 hours in this lab
                          └── ReviewTest.java     
 
 
+### You can run the test by: ./gradlew test
+
+## Class 7
+
+### Overview Of The Architecture
+
+├── main ├── Inheritance├── Restaurant.java
+                        ├── Review.java
+                        ├── Shop.java
+                        ├── Theater.java
+
+├── test ├── Inheritance |── RestaurantTest.java                   
+                         └── ReviewTest.java 
+                         ├── ShopTest.java
+                         ├── TheaterTest.java    
+
+
 ### You can run the test by: ./gradlew test 
