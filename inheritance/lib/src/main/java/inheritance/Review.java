@@ -1,14 +1,27 @@
 package inheritance;
 
+
+/**
+ * Review class
+ */
 public class Review {
     private String body;
     private String author;
-    private int numberOfStarsFromAuthor;
+    private int starsNumberFromAuthor;
+    private String movieName;
 
-    public Review(String body, String author, int numberOfStarsFromAuthor) {
+    public Review(String body, String author, int starsNumberFromAuthor) {
         this.body = body;
         this.author = author;
-        this.numberOfStarsFromAuthor = numberOfStarsFromAuthor;
+        this.starsNumberFromAuthor = starsNumberFromAuthor;
+
+    }
+
+    public Review(String body, String author, int starsNumberFromAuthor, String movieName) {
+        this.body = body;
+        this.author = author;
+        this.starsNumberFromAuthor = starsNumberFromAuthor;
+        this.movieName = movieName;
     }
 
     @Override
@@ -16,8 +29,16 @@ public class Review {
         return "Review{" +
                 "body='" + body + '\'' +
                 ", author='" + author + '\'' +
-                ", numberOfStars=" + numberOfStarsFromAuthor +
+                ", starsNumberFromAuthor=" + starsNumberFromAuthor +
                 '}';
+    }
+
+    public int getStarsNumberFromAuthor() {
+        return starsNumberFromAuthor;
+    }
+
+    public void setStarsNumberFromAuthor(int starsNumberFromAuthor) {
+        this.starsNumberFromAuthor = starsNumberFromAuthor;
     }
 
     public String getBody() {
@@ -36,11 +57,12 @@ public class Review {
         this.author = author;
     }
 
-    public int getNumberOfStars() {
-        return numberOfStarsFromAuthor;
+
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setNumberOfStars(int numberOfStars) {
-        this.numberOfStarsFromAuthor = numberOfStars;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 }

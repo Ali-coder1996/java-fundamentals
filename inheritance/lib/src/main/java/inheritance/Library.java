@@ -10,26 +10,64 @@ public class Library {
     public static void main(String[] args) {
 
         // create restaurant
-        Restaurant restaurant1 = new Restaurant("kebab",5,50);
-        Restaurant restaurant2 = new Restaurant("KFC",5,30);
-        Restaurant restaurant3 = new Restaurant("Meat",4,20);
+//        Restaurant restaurant1 = new Restaurant("kebab",5,50);
+//        Restaurant restaurant2 = new Restaurant("KFC",5,30);
+//        Restaurant restaurant3 = new Restaurant("Meat",4,20);
+//
+//        System.out.println("restuarant1 before add review :"+ restaurant1);
+//        System.out.println("restuarant2 before add review :"+ restaurant2);
+//        System.out.println("restuarant3 before add review :"+ restaurant3);
+//
+//        Review review1=new Review("I love kaba","Ali",1);
+//        Review review2=new Review("I love KFC","Ali",3);
+//        Review review3=new Review("I love Meat","Ali",2);
+//
+//        restaurant1.addReview(review1);
+//        restaurant2.addReview(review2);
+//        restaurant3.addReview(review3);
+//
+//        System.out.println();
+//        System.out.println("restuarant1 after add review :"+ restaurant1);
+//        System.out.println("restuarant2 after add review :"+ restaurant2);
+//        System.out.println("restuarant3 after add review :"+ restaurant3);
 
-        System.out.println("restuarant1 before add review :"+ restaurant1);
-        System.out.println("restuarant2 before add review :"+ restaurant2);
-        System.out.println("restuarant3 before add review :"+ restaurant3);
 
-        Review review1=new Review("I love kaba","Ali",1);
-        Review review2=new Review("I love KFC","Ali",3);
-        Review review3=new Review("I love Meat","Ali",2);
+        //
+        Shop shop = new Shop("Lucky", "toys store", 50);
+        Review reviewShop=new Review("good toys", "Ali", 2);
+        System.out.println("shop before add review"+shop);
 
-        restaurant1.addReview(review1);
-        restaurant2.addReview(review2);
-        restaurant3.addReview(review3);
+        // add some reviews
+        shop.addReview(reviewShop);
+        System.out.println("shop after add review"+ shop);
 
-        System.out.println();
-        System.out.println("restuarant1 after add review :"+ restaurant1);
-        System.out.println("restuarant2 after add review :"+ restaurant2);
-        System.out.println("restuarant3 after add review :"+ restaurant3);
+//        // create Theater
+        Theater theater = new Theater("galaxy");
+
+        System.out.println("theater before add review"+theater);
+
+        // add movies
+        theater.addMovie("bad boys");
+        theater.addMovie("batman vs Superman");
+        theater.addMovie("The Fast");
+        theater.addMovie("transporter");
+        theater.addMovie("On the moon");
+
+        // add some reviews
+        Review reviewTheater1 =new Review("nice movie","Ali",3,"bad boys");
+        Review reviewTheater2 =new Review("nice movie","Ali",3,"batman vs Superman");
+        Review reviewTheater3 =new Review("nice movie","Ali",3,"The Fast");
+        theater.addReview(reviewTheater1);
+        theater.addReview(reviewTheater2);
+        theater.addReview(reviewTheater3);
+
+        System.out.println("theater after add movies"+theater);
+
+        //remove movies
+        theater.removeMovie("The Fast");
+
+        // invoke toString() after remove movies
+        System.out.println("theater after remove movies"+theater);
 
     }
 }

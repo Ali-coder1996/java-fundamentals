@@ -15,12 +15,12 @@ public class Restaurant {
     }
 
     public void addReview(Review review) {
-        if (review.getNumberOfStars() < 0 || review.getNumberOfStars() > 5) {
-            System.out.println("Sorry "+review.getNumberOfStars() + " Stars Number Not valid --> it's should be between 0 and 5, So it ");
+        if (review.getStarsNumberFromAuthor() < 0 || review.getStarsNumberFromAuthor() > 5) {
+            System.out.println("Sorry "+review.getStarsNumberFromAuthor() + " Stars Number Not valid --> it's should be between 0 and 5, So it ");
         }else {
-            Review newReview = new Review(review.getBody(), review.getAuthor(), review.getNumberOfStars());
+            Review newReview = new Review(review.getBody(), review.getAuthor(), review.getStarsNumberFromAuthor());
             reviews.add(newReview);
-            this.stars = (review.getNumberOfStars() + this.stars) / 2;
+            this.stars = (review.getStarsNumberFromAuthor() + this.stars) / 2;
         }
     }
 
